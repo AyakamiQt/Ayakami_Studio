@@ -1,483 +1,421 @@
-/* ------------------ */
-/* Global Settings */
-/* ------------------ */
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+/* ==========================
+   Global Theme
+========================== */
 
 body {
-    background: #12091c;
-    color: #f8f3ff;
-    font-family: "Segoe UI", sans-serif;
-    line-height: 1.6;
-    overflow-x: hidden;
-}
+    margin: 0;
+    min-height: 100vh;
 
-a {
-    text-decoration: none;
-    color: inherit;
-}
-
-/* ------------------ */
-/* Header */
-/* ------------------ */
-
-.site-header {
-    position: sticky;
-    top: 0;
-    z-index: 100;
-
-    backdrop-filter: blur(12px);
-
-    background: rgba(18, 9, 28, 0.8);
-
-    border-bottom: 1px solid rgba(255,255,255,0.08);
-}
-
-.navbar {
-    max-width: 1200px;
-
-    margin: auto;
-
-    padding: 18px 30px;
-
-    display: flex;
-
-    justify-content: space-between;
-
-    align-items: center;
-}
-
-.logo-text {
-    font-size: 1.4rem;
-    font-weight: bold;
-    color: #ffd9ff;
-}
-
-.nav-links {
-    display: flex;
-    gap: 24px;
-}
-
-.nav-links a {
-    transition: .2s;
-}
-
-.nav-links a:hover {
-    color: #ffbaf4;
-}
-
-/* ------------------ */
-/* Hero */
-/* ------------------ */
-
-.hero {
-
-    min-height: 80vh;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    text-align: center;
-
-    position: relative;
-
-    overflow: hidden;
-
-    padding: 50px 20px;
+    font-family: Georgia, serif;
 
     background:
-
         radial-gradient(
-            circle at top left,
-            rgba(255,182,193,.15),
+            circle at top,
+            rgba(255, 214, 232, 0.22),
             transparent 35%
         ),
-
-        radial-gradient(
-            circle at bottom right,
-            rgba(190,160,255,.15),
-            transparent 35%
-        ),
-
         linear-gradient(
             180deg,
-            #12091c,
-            #1a1028,
-            #25163d
-        );
-}
-
-/* Moon */
-
-.hero::after {
-
-    content: "";
-
-    position: absolute;
-
-    width: 350px;
-    height: 350px;
-
-    top: -120px;
-    right: -100px;
-
-    border-radius: 50%;
-
-    background:
-
-        radial-gradient(
-            circle,
-            rgba(255,255,255,.9),
-            rgba(255,220,255,.8),
-            rgba(255,180,255,.2),
-            transparent
+            #1b1424,
+            #3a2138 55%,
+            #1b1424
         );
 
-    filter: blur(5px);
+    color: #fff7f0;
 }
 
-/* Vertical Japanese Lines */
+body::before {
+    content: "✿";
 
-.hero::before {
+    position: fixed;
 
-    content: "";
+    top: 8%;
+    left: 8%;
 
-    position: absolute;
+    font-size: 90px;
 
-    inset: 0;
+    color: rgba(255, 190, 210, 0.14);
 
-    background-image:
-
-        repeating-linear-gradient(
-            90deg,
-            transparent,
-            transparent 140px,
-            rgba(255,255,255,.02) 141px
-        );
+    pointer-events: none;
 }
 
-/* ------------------ */
-/* Hero Content */
-/* ------------------ */
+body::after {
+    content: "桜";
 
-.hero-content {
-    position: relative;
-    z-index: 5;
+    position: fixed;
+
+    bottom: 8%;
+    right: 8%;
+
+    font-size: 100px;
+
+    color: rgba(255, 190, 210, 0.12);
+
+    pointer-events: none;
 }
 
-.hero-logo {
+/* ==========================
+   Layout
+========================== */
 
-    width: 180px;
-    height: 180px;
-
-    object-fit: contain;
-
-    margin-bottom: 30px;
-
-    filter:
-        drop-shadow(0 0 25px rgba(255,180,255,.4));
-}
-
-.hero h1 {
-
-    font-size: clamp(4rem, 10vw, 7rem);
-
-    font-family:
-        "Yu Mincho",
-        serif;
-
-    color: #ffe6ff;
-
-    letter-spacing: 3px;
-
-    text-shadow:
-        0 0 20px rgba(255,180,255,.4);
-}
-
-.japanese-name {
-
-    margin-top: 10px;
-
-    color: #d8b7ff;
-
-    letter-spacing: 10px;
-
-    font-size: 1.1rem;
-}
-
-.tagline {
-
-    margin-top: 25px;
-
-    font-size: 1.2rem;
-
-    color: #e9d9ff;
-
-    max-width: 700px;
-}
-
-/* ------------------ */
-/* Buttons */
-/* ------------------ */
-
-.hero-buttons {
-
-    margin-top: 40px;
+.home {
+    min-height: 100vh;
 
     display: flex;
+    flex-direction: column;
 
+    align-items: center;
     justify-content: center;
-
-    gap: 20px;
-
-    flex-wrap: wrap;
-}
-
-.button {
-
-    background: #ff9df0;
-
-    color: #1c1028;
-
-    padding: 14px 28px;
-
-    border-radius: 999px;
-
-    font-weight: bold;
-
-    transition: .25s;
-}
-
-.button:hover {
-
-    transform: translateY(-3px);
-
-    background: #ffc7f8;
-}
-
-.secondary {
-
-    background: transparent;
-
-    color: #ffd6ff;
-
-    border: 1px solid #ff9df0;
-}
-
-/* ------------------ */
-/* Cards */
-/* ------------------ */
-
-.home-grid {
-
-    max-width: 1200px;
-
-    margin: 80px auto;
-
-    padding: 0 25px;
-
-    display: grid;
-
-    grid-template-columns:
-        repeat(auto-fit, minmax(250px, 1fr));
-
-    gap: 25px;
-}
-
-.home-card {
-
-    padding: 30px;
-
-    border-radius: 20px;
-
-    background:
-        rgba(255,255,255,.05);
-
-    border:
-        1px solid rgba(255,255,255,.08);
-
-    transition: .25s;
-}
-
-.home-card:hover {
-
-    transform: translateY(-5px);
-
-    border-color:
-        rgba(255,180,255,.5);
-
-    background:
-        rgba(255,255,255,.08);
-}
-
-.home-card h2 {
-
-    margin-bottom: 15px;
-
-    color: #ffcbff;
-}
-
-.home-card p {
-
-    color: #d7c5ea;
-}
-
-/* ------------------ */
-/* Footer */
-/* ------------------ */
-
-footer {
 
     text-align: center;
 
     padding: 40px 20px;
-
-    border-top:
-        1px solid rgba(255,255,255,.08);
-
-    color: #bca8cf;
 }
 
-/* ------------------ */
-/* Mobile */
-/* ------------------ */
+/* ==========================
+   Studio Title
+========================== */
 
-@media (max-width: 768px) {
+.studio-name {
+    margin: 0 0 20px;
 
-    .navbar {
-        flex-direction: column;
-        gap: 15px;
-    }
+    font-size: 28px;
 
-    .nav-links {
-        flex-wrap: wrap;
-        justify-content: center;
-    }
+    letter-spacing: 5px;
 
-    .hero-logo {
-        width: 140px;
-        height: 140px;
-    }
+    color: #ffd6c9;
 }
 
-/* ------------------ */
-/* Inner Pages */
-/* ------------------ */
+/* ==========================
+   Logo
+========================== */
 
-.page {
-    min-height: 80vh;
-    padding: 70px 25px;
-    background:
-        radial-gradient(circle at top left, rgba(255,182,193,.12), transparent 30%),
-        radial-gradient(circle at bottom right, rgba(190,160,255,.14), transparent 35%),
-        linear-gradient(180deg, #12091c, #1a1028, #25163d);
+.logo {
+    width: 350px;
+    max-width: 80%;
+
+    height: auto;
+
+    margin-bottom: 30px;
+
+    filter:
+        drop-shadow(0 0 10px rgba(255,180,210,0.3))
+        drop-shadow(0 0 25px rgba(255,180,210,0.15));
 }
 
-.page-header {
-    max-width: 900px;
-    margin: 0 auto 50px;
+/* ==========================
+   Navigation
+========================== */
+
+nav {
+    margin-bottom: 50px;
+}
+
+nav a {
+    color: #f2c9d7;
+
+    text-decoration: none;
+
+    padding: 10px 24px;
+
+    border-radius: 30px;
+
+    background: rgba(255,255,255,0.05);
+
+    border: 1px solid rgba(255,214,232,0.15);
+
+    transition: 0.3s ease;
+}
+
+nav a:hover {
+    background: rgba(255,255,255,0.12);
+
+    box-shadow:
+        0 0 12px rgba(255,190,210,0.2);
+}
+
+/* ==========================
+   Names
+========================== */
+
+.name-block {
+    margin-bottom: 24px;
+}
+
+.name-block h1,
+.japanese-name {
+    margin: 0;
+
+    font-size: 48px;
+
+    line-height: 1.25;
+
+    letter-spacing: 3px;
+
+    color: #ffe2d6;
+
+    text-shadow:
+        0 0 18px rgba(255,170,205,0.35);
+}
+
+.japanese-name {
+    color: #f2c9d7;
+}
+
+/* ==========================
+   Tagline
+========================== */
+
+.tagline {
+    margin: 0 0 28px;
+
+    font-size: 18px;
+
+    letter-spacing: 3px;
+
+    text-transform: uppercase;
+
+    color: #d8a7b1;
+}
+
+/* ==========================
+   Welcome Text
+========================== */
+
+.welcome {
+    max-width: 650px;
+
+    margin: 0;
+
+    font-size: 20px;
+
+    line-height: 1.6;
+
+    color: #f8dce8;
+}
+
+/* ==========================
+   About Me Section
+========================== */
+
+.about-me {
+    padding: 90px 25px;
+
     text-align: center;
+
+    background: rgba(255,214,232,0.05);
+
+    border-top: 1px solid rgba(255,214,232,0.15);
 }
 
-.page-header h1 {
-    font-size: clamp(3rem, 8vw, 5rem);
-    font-family: "Yu Mincho", serif;
-    color: #ffe6ff;
-    text-shadow: 0 0 20px rgba(255,180,255,.35);
+.about-me h2 {
+    margin-bottom: 35px;
+
+    font-size: 38px;
+
+    letter-spacing: 4px;
+
+    color: #ffd6c9;
 }
 
-.page-header p {
-    margin-top: 15px;
-    color: #e5d4ff;
-    font-size: 1.1rem;
+.about-me p {
+    max-width: 750px;
+
+    margin: 0 auto 25px;
+
+    line-height: 1.9;
+
+    font-size: 19px;
+
+    color: #f8dce8;
 }
 
-.content-card {
-    max-width: 900px;
-    margin: 0 auto 30px;
-    padding: 35px;
+/* ==========================
+   Contact Cards
+========================== */
+
+.contact-card {
+    width: 550px;
+    max-width: 90%;
+
+    margin: 30px 0;
+    padding: 30px;
+
+    background: rgba(255,220,235,0.05);
+
+    border: 1px solid rgba(255,220,235,0.15);
+
     border-radius: 24px;
-    background: rgba(255,255,255,.06);
-    border: 1px solid rgba(255,255,255,.1);
+
+    box-shadow:
+        0 0 20px rgba(255,180,210,0.08);
 }
 
-.content-card h2 {
-    color: #ffcbff;
-    margin-bottom: 15px;
+.contact-card h2 {
+    margin-top: 0;
+    margin-bottom: 20px;
+
+    color: #ffd6dc;
+
+    letter-spacing: 2px;
 }
 
-.content-card p {
-    color: #ddccef;
-    margin-bottom: 15px;
+.contact-card p {
+    display: flex;
+
+    align-items: center;
+
+    margin: 14px 0;
+
+    font-size: 18px;
 }
 
-.content-card ul {
-    padding-left: 25px;
-    color: #ddccef;
+.contact-card i {
+    width: 30px;
+
+    margin-right: 12px;
 }
 
-.gallery-grid,
-.social-grid,
-.commission-grid {
-    max-width: 1200px;
-    margin: 0 auto;
-    display: grid;
-    gap: 25px;
+/* Social Colors */
+
+.discord {
+    color: #5865F2;
+}
+
+.twitch {
+    color: #9146FF;
+}
+
+.twitter {
+    color: #e8e8e8;
+}
+
+.reddit {
+    color: #FF4500;
+}
+
+.vgen {
+    color: #ff93c9;
+}
+
+.kofi {
+    color: #29ABE0;
+}
+
+/* Business Colors */
+
+.email {
+    color: #ffd6dc;
+}
+
+.commissions {
+    color: #7CFFB2;
+}
+
+.collabs {
+    color: #8FD8FF;
+}
+
+.business {
+    color: #FFE08A;
+}
+
+/* ==========================
+   Closing Text
+========================== */
+
+.closing {
+    margin-top: 40px;
+
+    font-style: italic;
+
+    color: #d8a7b1;
+}
+
+/* ==========================
+   Mobile
+========================== */
+
+@media (max-width: 700px) {
+
+    .name-block h1,
+    .japanese-name {
+        font-size: 34px;
+    }
+
+    .logo {
+        width: 250px;
+    }
+
+    .welcome {
+        font-size: 18px;
+    }
+
+    .contact-card {
+        padding: 20px;
+    }
+}
+
+.about-card {
+    width: 700px;
+    max-width: 90%;
+
+    margin: 25px 0;
+    padding: 30px;
+
+    background: rgba(255,220,235,0.05);
+
+    border: 1px solid rgba(255,220,235,0.15);
+
+    border-radius: 24px;
+
+    box-shadow:
+        0 0 20px rgba(255,180,210,0.08);
+}
+
+.about-card h2 {
+    margin-top: 0;
+
+    color: #ffd6dc;
+
+    letter-spacing: 2px;
+}
+
+.about-card p {
+    line-height: 1.8;
+
+    color: #f8dce8;
+
+    font-size: 18px;
 }
 
 .gallery-grid {
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  width: 900px;
+  max-width: 95%;
+  margin-top: 40px;
+
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
 }
 
-.gallery-card,
-.social-card {
-    background: rgba(255,255,255,.06);
-    border: 1px solid rgba(255,255,255,.1);
-    border-radius: 24px;
-    overflow: hidden;
-    transition: .25s;
+.gallery-item {
+  min-height: 180px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: rgba(255, 220, 235, 0.05);
+  border: 1px solid rgba(255, 220, 235, 0.15);
+  border-radius: 24px;
+
+  color: #f8dce8;
+  box-shadow: 0 0 20px rgba(255, 180, 210, 0.08);
 }
 
-.gallery-card:hover,
-.social-card:hover {
-    transform: translateY(-5px);
-    border-color: rgba(255,180,255,.5);
-    background: rgba(255,255,255,.09);
-}
-
-.gallery-card img {
-    width: 100%;
-    height: 260px;
-    object-fit: cover;
-    display: block;
-}
-
-.gallery-card h2,
-.social-card h2 {
-    padding: 20px 20px 5px;
-    color: #ffcbff;
-}
-
-.gallery-card p,
-.social-card p {
-    padding: 0 20px 22px;
-    color: #d7c5ea;
-}
-
-.social-grid {
-    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-}
-
-.social-card {
-    padding: 10px;
-}
-
-.commission-grid {
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    margin-bottom: 30px;
+@media (max-width: 800px) {
+  .gallery-grid {
+    grid-template-columns: 1fr;
+  }
 }
