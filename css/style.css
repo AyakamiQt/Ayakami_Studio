@@ -5,7 +5,6 @@
 body {
     margin: 0;
     min-height: 100vh;
-
     font-family: Georgia, serif;
 
     background:
@@ -22,31 +21,21 @@ body {
 
 body::before {
     content: "✿";
-
     position: fixed;
-
     top: 8%;
     left: 8%;
-
     font-size: 90px;
-
     color: rgba(255, 190, 210, 0.14);
-
     pointer-events: none;
 }
 
 body::after {
     content: "桜";
-
     position: fixed;
-
     bottom: 8%;
     right: 8%;
-
     font-size: 100px;
-
     color: rgba(255, 190, 210, 0.12);
-
     pointer-events: none;
 }
 
@@ -56,42 +45,29 @@ body::after {
 
 .home {
     min-height: 100vh;
-
     display: flex;
     flex-direction: column;
-
     align-items: center;
-    justify-content: center;
-
     text-align: center;
 
     padding: 40px 20px;
 }
 
 /* ==========================
-   Studio Title
+   Studio Title + Logo
 ========================== */
 
 .studio-name {
     margin: 0 0 20px;
-
     font-size: 28px;
-
     letter-spacing: 5px;
-
     color: #ffd6c9;
 }
-
-/* ==========================
-   Logo
-========================== */
 
 .logo {
     width: 350px;
     max-width: 80%;
-
     height: auto;
-
     margin-bottom: 30px;
 
     filter:
@@ -108,15 +84,14 @@ nav {
 
 nav a {
     color: #f2c9d7;
-
     text-decoration: none;
 
+    display: inline-block;
+    margin: 6px;
     padding: 10px 24px;
 
     border-radius: 30px;
-
     background: rgba(255, 255, 255, 0.05);
-
     border: 1px solid rgba(255, 214, 232, 0.15);
 
     transition: 0.3s ease;
@@ -124,13 +99,11 @@ nav a {
 
 nav a:hover {
     background: rgba(255, 255, 255, 0.12);
-
-    box-shadow:
-        0 0 12px rgba(255, 190, 210, 0.2);
+    box-shadow: 0 0 12px rgba(255, 190, 210, 0.2);
 }
 
 /* ==========================
-   Names
+   Page Titles
 ========================== */
 
 .name-block {
@@ -140,17 +113,11 @@ nav a:hover {
 .name-block h1,
 .japanese-name {
     margin: 0;
-
     font-size: 48px;
-
     line-height: 1.25;
-
     letter-spacing: 3px;
-
     color: #ffe2d6;
-
-    text-shadow:
-        0 0 18px rgba(255, 170, 205, 0.35);
+    text-shadow: 0 0 18px rgba(255, 170, 205, 0.35);
 }
 
 .japanese-name {
@@ -158,120 +125,82 @@ nav a:hover {
 }
 
 /* ==========================
-   Tagline
+   Text
 ========================== */
 
 .tagline {
     margin: 0 0 28px;
-
     font-size: 18px;
-
     letter-spacing: 3px;
-
     text-transform: uppercase;
+    color: #d8a7b1;
+}
 
+.welcome {
+    max-width: 650px;
+    margin: 0 0 35px;
+    font-size: 20px;
+    line-height: 1.6;
+    color: #f8dce8;
+}
+
+.closing {
+    max-width: 700px;
+    margin-top: 40px;
+    font-style: italic;
+    line-height: 1.7;
     color: #d8a7b1;
 }
 
 /* ==========================
-   Welcome Text
+   Cards
 ========================== */
 
-.welcome {
-    max-width: 650px;
-
-    margin: 0;
-
-    font-size: 20px;
-
-    line-height: 1.6;
-
-    color: #f8dce8;
-}
-
-/* ==========================
-   About Me Section
-========================== */
-
-.about-me {
-    padding: 90px 25px;
-
-    text-align: center;
-
-    background: rgba(255, 214, 232, 0.05);
-
-    border-top: 1px solid rgba(255, 214, 232, 0.15);
-}
-
-.about-me h2 {
-    margin-bottom: 35px;
-
-    font-size: 38px;
-
-    letter-spacing: 4px;
-
-    color: #ffd6c9;
-}
-
-.about-me p {
-    max-width: 750px;
-
-    margin: 0 auto 25px;
-
-    line-height: 1.9;
-
-    font-size: 19px;
-
-    color: #f8dce8;
-}
-
-/* ==========================
-   Contact Cards
-========================== */
-
+.about-card,
 .contact-card {
-    width: 550px;
+    width: 700px;
     max-width: 90%;
 
-    margin: 30px 0;
+    margin: 25px 0;
     padding: 30px;
 
     background: rgba(255, 220, 235, 0.05);
-
     border: 1px solid rgba(255, 220, 235, 0.15);
-
     border-radius: 24px;
 
-    box-shadow:
-        0 0 20px rgba(255, 180, 210, 0.08);
+    box-shadow: 0 0 20px rgba(255, 180, 210, 0.08);
 }
 
+.about-card h2,
 .contact-card h2 {
     margin-top: 0;
     margin-bottom: 20px;
 
     color: #ffd6dc;
-
     letter-spacing: 2px;
 }
 
+.about-card p,
+.contact-card p {
+    line-height: 1.8;
+    color: #f8dce8;
+    font-size: 18px;
+}
+
+/* ==========================
+   Contact Page
+========================== */
+
 .contact-card p {
     display: flex;
-
     align-items: center;
-
     margin: 14px 0;
-
-    font-size: 18px;
 }
 
 .contact-card i {
     width: 30px;
-
     margin-right: 12px;
 }
-
-/* Social Colors */
 
 .discord {
     color: #5865F2;
@@ -297,8 +226,6 @@ nav a:hover {
     color: #29ABE0;
 }
 
-/* Business Colors */
-
 .email {
     color: #ffd6dc;
 }
@@ -316,73 +243,8 @@ nav a:hover {
 }
 
 /* ==========================
-   Closing Text
+   Gallery Page
 ========================== */
-
-.closing {
-    margin-top: 40px;
-
-    font-style: italic;
-
-    color: #d8a7b1;
-}
-
-/* ==========================
-   Mobile
-========================== */
-
-@media (max-width: 700px) {
-
-    .name-block h1,
-    .japanese-name {
-        font-size: 34px;
-    }
-
-    .logo {
-        width: 250px;
-    }
-
-    .welcome {
-        font-size: 18px;
-    }
-
-    .contact-card {
-        padding: 20px;
-    }
-}
-
-.about-card {
-    width: 700px;
-    max-width: 90%;
-
-    margin: 25px 0;
-    padding: 30px;
-
-    background: rgba(255, 220, 235, 0.05);
-
-    border: 1px solid rgba(255, 220, 235, 0.15);
-
-    border-radius: 24px;
-
-    box-shadow:
-        0 0 20px rgba(255, 180, 210, 0.08);
-}
-
-.about-card h2 {
-    margin-top: 0;
-
-    color: #ffd6dc;
-
-    letter-spacing: 2px;
-}
-
-.about-card p {
-    line-height: 1.8;
-
-    color: #f8dce8;
-
-    font-size: 18px;
-}
 
 .gallery-grid {
     width: 900px;
@@ -409,8 +271,33 @@ nav a:hover {
     box-shadow: 0 0 20px rgba(255, 180, 210, 0.08);
 }
 
+/* ==========================
+   Mobile
+========================== */
+
 @media (max-width: 800px) {
     .gallery-grid {
         grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 700px) {
+
+    .name-block h1,
+    .japanese-name {
+        font-size: 34px;
+    }
+
+    .logo {
+        width: 250px;
+    }
+
+    .welcome {
+        font-size: 18px;
+    }
+
+    .about-card,
+    .contact-card {
+        padding: 20px;
     }
 }
